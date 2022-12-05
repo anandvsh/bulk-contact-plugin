@@ -1,6 +1,6 @@
 {
   "name": "bulk-contact",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Allow to save multiple contact detail",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
