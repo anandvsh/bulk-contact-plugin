@@ -1,6 +1,6 @@
 # bulk-contact
 
-Allow to save multiple contact detail
+Allow to save multiple contact detail in ionic capacitor 
 
 ## Install
 
@@ -8,6 +8,26 @@ Allow to save multiple contact detail
 npm install bulk-contact
 npx cap sync
 ```
+
+## Example
+    BulkContact.getPermissions().then(permissionResponse => {
+      if (permissionResponse) {
+        if (permissionResponse.granted) {
+          for (const currentContact of contactList) {
+            BulkContact.saveContact({
+              name: currentContact.name, 
+              mobile: currentContact.mobile
+            }).then(() => {
+              console.log('contact saved');
+            }).catch((exception) => {
+              console.log(exception);
+            }); 
+          }
+        } else {
+          console.log('permission denied');
+        }
+      }
+    });
 
 ## API
 
